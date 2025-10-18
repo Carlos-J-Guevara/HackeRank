@@ -20,28 +20,59 @@ const arrayTwo = [10, 5, 1, 0];
 // Expected output: 2
 const arrayThree = [1, 2, 3, 4, 5];
 
+// Expected output: "undeterminated case, 0 division"
+const arrayFour = [0, 0, 0, 0, 0];
+
+// Expected output: 2
+const arrayFive = [-1, -2, -3, -4, -5];
+
+// Expected output: "type of data no supported for this function: data type was Infinite in the array, or NaN, or it was not an array"
+const arraySix = ["a", "b", "c", "D", "F"];
+
 function countResponseTimeRegressions(responseTimes) {
     let responseTimesVarInternal = responseTimes;
     let averageArray = 0;
     let numbersGreater = 0;
     
-    // average of the array.
-    for (const index in responseTimesVarInternal) {
-        averageArray += responseTimesVarInternal[index];
-    }
-    averageArray = averageArray / responseTimesVarInternal.length;
+    // Determining is exactly an array executable
+    if(Array.isArray(responseTimesVarInternal) && responseTimesVarInternal.every(num => typeof num === "number" && Number.isFinite(num))){
+        // average of the array.
+        for (const index in responseTimesVarInternal) {
+            averageArray += responseTimesVarInternal[index];
+        }
 
-    // calculus of the numbers greater than the average. 
-    for (const index in responseTimesVarInternal) {
-        if (responseTimesVarInternal[index] > averageArray){
-            numbersGreater = numbersGreater + 1;
+        // cero case 
+        if(averageArray === 0){
+            return "undeterminated case, 0 division"
+        }
+
+        // case major 0 or less than
+        else if(averageArray > 0 || averageArray < 0){
+            averageArray = averageArray / responseTimesVarInternal.length;
+
+            // calculus of the numbers greater than the average. 
+            for (const index in responseTimesVarInternal) {
+                if (responseTimesVarInternal[index] > averageArray){
+                    numbersGreater = numbersGreater + 1;
+                }
+
+            }
+
+            // successful case
+            return numbersGreater;
         }
     }
-    return numbersGreater;
+
+    // whatever else type of data passed to 
+    else{
+        return "type of data no supported for this function: data type was Infinite in the array, or NaN, or it was not an array"
+    }
 }
 
 console.log(countResponseTimeRegressions(responseTimes))
 console.log(countResponseTimeRegressions(arrayOne))
 console.log(countResponseTimeRegressions(arrayTwo))
 console.log(countResponseTimeRegressions(arrayThree))
-
+console.log(countResponseTimeRegressions(arrayFour))
+console.log(countResponseTimeRegressions(arrayFive))
+console.log(countResponseTimeRegressions(arraySix))
