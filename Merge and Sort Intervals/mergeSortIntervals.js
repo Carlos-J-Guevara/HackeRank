@@ -26,17 +26,36 @@ const intervals = [
 [15, 18]
 ];
 
-function mergeHighDefinitionIntervals(intervals) {
-    let intervalsReturn = intervals; 
-    let row = [];
-    let rowFirstElement = 0;
-    let rowSecondElement = 0;
-    let comparing = [];  
+const testArray = [1,8];
 
-    for (const index in intervalsReturn){
-        
-        intervalsReturn[index][index]
+const turnNewArrays = (beforeArray) => {
+    const startElement = beforeArray[0];
+    const endElement = beforeArray[1];
+    const differenceBetween = endElement - startElement; 
+    const afterArray = [];
+
+    // Assigning the first element into the array which is the returned array.  
+    afterArray.push(startElement);
+
+    // cycles by the difference 
+    for(const i = 0; i < differenceBetween;){
+        afterArray.push(afterArray.at(-1) + 1);
     }
+    return afterArray
+};
 
-    return
-}
+// function mergeHighDefinitionIntervals(intervals) {
+//     let intervalsReturn = intervals; 
+//     let row = [];
+//     let rowFirstElement = 0;
+//     let rowSecondElement = 0;
+//     let comparing = [];  
+
+//     for (const index in intervalsReturn){ws
+//         intervalsReturn[index][index]
+//     }
+
+//     return
+// };
+
+console.log(turnNewArrays(testArray));
