@@ -26,8 +26,9 @@ const intervals = [
 [15, 18]
 ];
 
-const testArray = [1,8];
+// const testArray = [1,8]; this variable is here for testing the first par of the logic, the minimum array turned into a complete one 
 
+// function to turn the elements into the principal array a new array one complete
 const turnNewArrays = (beforeArray) => {
     const startElement = beforeArray[0];
     const endElement = beforeArray[1];
@@ -38,24 +39,22 @@ const turnNewArrays = (beforeArray) => {
     afterArray.push(startElement);
 
     // cycles by the difference 
-    for(const i = 0; i < differenceBetween;){
+    for(let i = 0; i < differenceBetween; i++){
         afterArray.push(afterArray.at(-1) + 1);
     }
     return afterArray
 };
 
-// function mergeHighDefinitionIntervals(intervals) {
-//     let intervalsReturn = intervals; 
-//     let row = [];
-//     let rowFirstElement = 0;
-//     let rowSecondElement = 0;
-//     let comparing = [];  
+// End function where all is going to be added just to invoke and use it
+function mergeHighDefinitionIntervals(intervals) {
+    let intervalsReturn = intervals; 
+    let compareArray1 = [];
+    let compareArray2 = [];
+    
+     for (const index in intervalsReturn){
+       compareArray1 = turnNewArrays(intervalsReturn[index])
+     }
 
-//     for (const index in intervalsReturn){ws
-//         intervalsReturn[index][index]
-//     }
+     return
+ };
 
-//     return
-// };
-
-console.log(turnNewArrays(testArray));
