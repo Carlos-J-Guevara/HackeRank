@@ -45,16 +45,60 @@ const turnNewArrays = (beforeArray) => {
     return afterArray
 };
 
-// End function where all is going to be added just to invoke and use it
-function mergeHighDefinitionIntervals(intervals) {
-    let intervalsReturn = intervals; 
-    let compareArray1 = [];
-    let compareArray2 = [];
+// In order to simplify the complexity, I have chosen to make a function to turn a complete list into a new extended list
+const turnANewlistOfLits = (entireList) => {
+    const newEntireList = [];
+    let eachElementInArray = [];
+
+    for (const index in entireList){
+        eachElementInArray = turnNewArrays(entireList[index]);
+        newEntireList.push(eachElementInArray);
+    }
     
-     for (const index in intervalsReturn){
-       compareArray1 = turnNewArrays(intervalsReturn[index])
-     }
+    return newEntireList;
+};
 
-     return
- };
+// function to determine if two elements of inside are overlapping
+const areTheseTwoOverlappingEachOther = (element1, element2) => {
+    const answerIfTheyAreOverlapping = false;
 
+    // for (){
+
+    // }
+    return 
+};
+
+// COMENTED TO LATER TO DETERMINE THE LAST FUNCTION ABOVE ADD AS A NEW PART OF LOGIC TO KEEP FOLLOW THE PROBLEM
+
+// the function to check if the new array which was produced coming from the second function, is in within, their elements are overlapping
+// const mergeTheOverlappingElementsInandSortThem = (newEntireList) => {
+//     const arrayOfNonOverlappingIntervals = [];
+//     let checkingElementsInside = [];
+
+//     for (const index in newEntireList) {
+//         if (index === 0){
+
+//         }
+
+//         else{
+
+//         }
+//     }
+//     return 
+// };
+
+// End function where all is going to be added just to invoke and use it
+// function mergeHighDefinitionIntervals(intervals) {
+//     let intervalsReturn = intervals; 
+//     let compareArray1 = [];
+//     let compareArray2 = [];
+    
+//      for (const index in intervalsReturn){
+//        compareArray1 = turnNewArrays(intervalsReturn[index])
+//      }
+
+//      return
+//  };
+
+//###########################  TESTING AREA ################################
+// console.log(turnANewlistOfLits(intervals));
