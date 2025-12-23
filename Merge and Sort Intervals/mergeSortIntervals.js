@@ -46,7 +46,7 @@ const turnNewArrays = (beforeArray) => {
 };
 
 // In order to simplify the complexity, I have chosen to make a function to turn a complete list into a new extended list
-const turnANewlistOfLits = (entireList) => {
+const turnANewListOfLits = (entireList) => {
     const newEntireList = [];
     let eachElementInArray = [];
 
@@ -58,47 +58,43 @@ const turnANewlistOfLits = (entireList) => {
     return newEntireList;
 };
 
-// function to determine if two elements of inside are overlapping
-const areTheseTwoOverlappingEachOther = (element1, element2) => {
-    const answerIfTheyAreOverlapping = false;
+// this is for checking just at the moment of the conditional, which is being expected to determine if it is being overlapped
+const areTheseTwoOverlapping = (array1, array2) => {
+    const yesOrNo = false;
+    const varArray1 = 0;
+    const varArray2 = 0;
+    const array1Length = 0;
+    const array2Length = 0;
+    const biggerLength = 0;
 
-    // for (){
+    array1Length = array1.length;
+    array2Length = array2.length;
 
-    // }
-    return 
+    if (array1Length > array2Length){
+        biggerLength = array1Length;
+    }
+
+    else {
+        biggerLength = array2Length;
+    }
+
+    for(let i = 0; i < biggerLength){
+        
+    };
+
 };
 
-// COMENTED TO LATER TO DETERMINE THE LAST FUNCTION ABOVE ADD AS A NEW PART OF LOGIC TO KEEP FOLLOW THE PROBLEM
+// function to determine if two elements of inside are overlapping (I will assume always we will need to sort some from)
+// this is the function with the original name of, to bring all of them like that to hackerRank
+const mergeHighDefinitionIntervals = (newEntireList) => {
+    const newTestedArrayNonOverlapping = [];
 
-// the function to check if the new array which was produced coming from the second function, is in within, their elements are overlapping
-// const mergeTheOverlappingElementsInandSortThem = (newEntireList) => {
-//     const arrayOfNonOverlappingIntervals = [];
-//     let checkingElementsInside = [];
+    for (const index in newEntireList){
+        if(){
 
-//     for (const index in newEntireList) {
-//         if (index === 0){
-
-//         }
-
-//         else{
-
-//         }
-//     }
-//     return 
-// };
-
-// End function where all is going to be added just to invoke and use it
-// function mergeHighDefinitionIntervals(intervals) {
-//     let intervalsReturn = intervals; 
-//     let compareArray1 = [];
-//     let compareArray2 = [];
+        }
+    }
     
-//      for (const index in intervalsReturn){
-//        compareArray1 = turnNewArrays(intervalsReturn[index])
-//      }
+    return newTestedArrayNonOverlapping
+};
 
-//      return
-//  };
-
-//###########################  TESTING AREA ################################
-// console.log(turnANewlistOfLits(intervals));
